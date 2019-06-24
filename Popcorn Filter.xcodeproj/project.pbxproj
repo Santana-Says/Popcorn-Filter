@@ -15,6 +15,8 @@
 		B51B95B022B9C6CB007BB439 /* SelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B95AF22B9C6CB007BB439 /* SelectionVC.swift */; };
 		B51B95B322B9C858007BB439 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B95B222B9C858007BB439 /* SelectionCell.swift */; };
 		B51B95B522B9C8AF007BB439 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B95B422B9C8AF007BB439 /* MovieDetails.swift */; };
+		B58E23D222C0297300E0338E /* SelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D122C0297300E0338E /* SelectionDataSource.swift */; };
+		B58E23D422C0436300E0338E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D322C0436300E0338E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B51B95AF22B9C6CB007BB439 /* SelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionVC.swift; sourceTree = "<group>"; };
 		B51B95B222B9C858007BB439 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		B51B95B422B9C8AF007BB439 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		B58E23D122C0297300E0338E /* SelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDataSource.swift; sourceTree = "<group>"; };
+		B58E23D322C0436300E0338E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				B51B95A422B9AC3D007BB439 /* Assets.xcassets */,
 				B51B95A622B9AC3D007BB439 /* LaunchScreen.storyboard */,
 				B51B95A922B9AC3D007BB439 /* Info.plist */,
+				B58E23D322C0436300E0338E /* Extensions.swift */,
 			);
 			path = "Popcorn Filter";
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 				B51B95AF22B9C6CB007BB439 /* SelectionVC.swift */,
 				B51B95B222B9C858007BB439 /* SelectionCell.swift */,
 				B51B95B422B9C8AF007BB439 /* MovieDetails.swift */,
+				B58E23D122C0297300E0338E /* SelectionDataSource.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -153,10 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51B95B322B9C858007BB439 /* SelectionCell.swift in Sources */,
+				B58E23D222C0297300E0338E /* SelectionDataSource.swift in Sources */,
 				B51B95A022B9AC3C007BB439 /* CategoryVC.swift in Sources */,
 				B51B95B022B9C6CB007BB439 /* SelectionVC.swift in Sources */,
 				B51B95B522B9C8AF007BB439 /* MovieDetails.swift in Sources */,
 				B51B959E22B9AC3C007BB439 /* AppDelegate.swift in Sources */,
+				B58E23D422C0436300E0338E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

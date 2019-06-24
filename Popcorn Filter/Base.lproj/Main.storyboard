@@ -68,33 +68,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f5i-44-Bei">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Le-tj-oae">
-                                    <size key="itemSize" width="147" height="253"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectionCell" id="TYc-j2-2aF" customClass="SelectionCell" customModule="Popcorn_Filter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="147" height="253"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="147" height="253"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l03-UR-yHQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBI-Vu-fT8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pa-bE-hbg">
+                                                <rect key="frame" x="10" y="10.666666666666664" width="34" height="30"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="iBf-wJ-fiW" eventType="touchUpInside" id="v4M-mp-cL4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="3pa-bE-hbg" firstAttribute="leading" secondItem="YBI-Vu-fT8" secondAttribute="leading" constant="10" id="Iyi-g9-tWC"/>
+                                            <constraint firstItem="3pa-bE-hbg" firstAttribute="centerY" secondItem="YBI-Vu-fT8" secondAttribute="centerY" id="ZXA-pc-0ia"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f5i-44-Bei">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="801"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Le-tj-oae">
+                                            <size key="itemSize" width="147" height="253"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SelectionCell" id="TYc-j2-2aF" customClass="SelectionCell" customModule="Popcorn_Filter" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="253"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="253"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-eL-i4Y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="293"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-cO-PqC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="293"/>
+                                                            <connections>
+                                                                <action selector="movieSelectedAction:" destination="TYc-j2-2aF" eventType="touchUpInside" id="SUB-Re-iaO"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="9KJ-cO-PqC" firstAttribute="leading" secondItem="TYc-j2-2aF" secondAttribute="leading" id="1j1-md-8RC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9KJ-cO-PqC" secondAttribute="bottom" id="F6o-ul-0XA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EXT-eL-i4Y" secondAttribute="bottom" id="HQd-sE-Lci"/>
+                                                    <constraint firstItem="EXT-eL-i4Y" firstAttribute="top" secondItem="TYc-j2-2aF" secondAttribute="top" id="Jas-xR-hYV"/>
+                                                    <constraint firstItem="EXT-eL-i4Y" firstAttribute="leading" secondItem="TYc-j2-2aF" secondAttribute="leading" id="Yyh-cI-cHd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EXT-eL-i4Y" secondAttribute="trailing" id="aAa-oS-vuI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9KJ-cO-PqC" secondAttribute="trailing" id="hTj-sl-SaN"/>
+                                                    <constraint firstItem="9KJ-cO-PqC" firstAttribute="top" secondItem="TYc-j2-2aF" secondAttribute="top" id="xds-9n-64y"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="movieImg" destination="EXT-eL-i4Y" id="ZyM-jA-lvQ"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YBI-Vu-fT8" firstAttribute="height" secondItem="l03-UR-yHQ" secondAttribute="height" multiplier="0.06" id="Zrd-fH-oax"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Di7-ks-hVD" firstAttribute="bottom" secondItem="f5i-44-Bei" secondAttribute="bottom" id="7EG-X5-7FG"/>
-                            <constraint firstItem="Di7-ks-hVD" firstAttribute="trailing" secondItem="f5i-44-Bei" secondAttribute="trailing" id="9Cf-lq-g6s"/>
-                            <constraint firstItem="f5i-44-Bei" firstAttribute="top" secondItem="Di7-ks-hVD" secondAttribute="top" id="Pmt-YF-9Ho"/>
-                            <constraint firstItem="f5i-44-Bei" firstAttribute="leading" secondItem="Di7-ks-hVD" secondAttribute="leading" id="U9b-wW-iL6"/>
+                            <constraint firstItem="Di7-ks-hVD" firstAttribute="trailing" secondItem="l03-UR-yHQ" secondAttribute="trailing" id="004-VW-eFd"/>
+                            <constraint firstItem="l03-UR-yHQ" firstAttribute="top" secondItem="Di7-ks-hVD" secondAttribute="top" id="Iup-SY-7mR"/>
+                            <constraint firstAttribute="bottom" secondItem="l03-UR-yHQ" secondAttribute="bottom" id="SL3-IJ-rsO"/>
+                            <constraint firstItem="l03-UR-yHQ" firstAttribute="leading" secondItem="jLB-aj-dVb" secondAttribute="leading" id="yLD-7P-vdd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Di7-ks-hVD"/>
                     </view>

@@ -19,8 +19,12 @@ class SelectionVC: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
-	private var movieData: [MovieDetails]?	
 	var category: Category?
+	private lazy var selectionDataSource: SelectionDataSource = {
+		let datasource = SelectionDataSource(moviesView: self.collectionView, category: self.category)
+		datasource.cellDelegate = self
+		return datasource
+	}()
 	
 	//MARK: - Properties
 	
@@ -30,38 +34,28 @@ class SelectionVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		retreiveData()
+		collectionView.delegate = selectionDataSource
+		collectionView.dataSource = selectionDataSource
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		selectionDataSource.retreiveData()
 	}
 	
 	//MARK: - IBActions
 	
+	@IBAction func backButton(_ sender: Any) {
+		dismiss(animated: true, completion: nil)
+	}
 	
 	//MARK: - Helpers
-	
-	private func buildURL() -> URL? {
-		var components = URLComponents()
-		components.scheme = "https"
-		components.host = "tv-v2.api-fetch.website"
-		if let category = category {
-			components.path = "/\(category.rawValue)/1"
-		}
-		
-		return components.url
-	}
-	
-	private func retreiveData() {
-		guard let url = buildURL() else { return }
-		
-		URLSession.shared.dataTask(with: url) { (data, response, error) in
-			print("Doing Something")
-			if let data = data {
-				do {
-					self.movieData = try JSONDecoder().decode([MovieDetails].self, from: data)
-				} catch let err {
-					print("Error serrializing error", err)
-				}
-			}
-		}.resume()
-	}
 
+}
+
+//MARK: - Cell Delegate
+
+extension SelectionVC: SelectionCellDelegate {
+	func movieSelected() {
+		print("Movie selected")
+	}
 }
