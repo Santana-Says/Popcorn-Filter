@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SelectionCellDelegate: AnyObject {
-	func movieSelected()
+	func open(media: MovieDetails)
 }
 
 class SelectionCell: UICollectionViewCell {
@@ -21,16 +21,23 @@ class SelectionCell: UICollectionViewCell {
 	//MARK: - Properties
 	
 	weak var moviedelegate: SelectionCellDelegate?
+	private var details: MovieDetails?
 	
 	//MARK: - IBActions
 	
 	@IBAction func movieSelectedAction(_ sender: Any) {
-		moviedelegate?.movieSelected()
+		guard let details = details else { return }
+		moviedelegate?.open(media: details)
 	}
 	
 	//MARK: - Helpers
 	
-	func configImg(from urlString: String?) {
+	func config(data: MovieDetails) {
+		details = data
+		setImg(from: data.images?.poster)
+	}
+	
+	private func setImg(from urlString: String?) {
 		if let urlString = urlString, let url = URL(string: urlString){
 			movieImg.load(url: url)
 		}

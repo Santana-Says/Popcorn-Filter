@@ -72,7 +72,8 @@ extension SelectionDataSource: UICollectionViewDataSource,  UICollectionViewDele
 		if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectionCell", for: indexPath) as? SelectionCell {
 			let data = movieData[indexPath.row]
 			
-			cell.configImg(from: data.images?.poster)
+			cell.config(data: data)
+			cell.moviedelegate = cellDelegate
 			
 			return cell
 		}

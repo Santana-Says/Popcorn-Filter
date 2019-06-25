@@ -9,25 +9,26 @@
 import Foundation
 
 struct MovieDetails: Codable {
-	var title:		String?
-	var year:		String?
-	var synopsis:	String?
-	var runtime: 	String?
-	var trailer:	String?
-	var rated:		String?
-	var images:		MovieImages?
-	var review:		MovieReview?
+	var title:				String?
+	var year:				String?
+	var synopsis:			String?
+	var runtime: 			String?
+	var trailer:			String?
+	var certification:		String?
+	var genres:				[String]?
+	var images:				MovieImages?
+	var rating:				MovieReview?
 	
-	enum codingKeys: String, CodingKey {
-		case title
-		case year
-		case synopsis
-		case runtime
-		case trailer
-		case rated = "certification"
-		case images
-		case review = "rating"
-	}
+//	enum codingKeys: String, CodingKey {
+//		case title
+//		case year
+//		case synopsis
+//		case runtime
+//		case trailer
+//		case rated = "certification"
+//		case images
+//		case review = "rating"
+//	}
 	
 }
 

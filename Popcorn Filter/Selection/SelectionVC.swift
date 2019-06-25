@@ -55,7 +55,10 @@ class SelectionVC: UIViewController {
 //MARK: - Cell Delegate
 
 extension SelectionVC: SelectionCellDelegate {
-	func movieSelected() {
-		print("Movie selected")
+	func open(media: MovieDetails) {
+		if let profileVC = storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? MovieProfileVC {
+			profileVC.mediaDetails = media
+			present(profileVC, animated: true, completion: nil)
+		}
 	}
 }

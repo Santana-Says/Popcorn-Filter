@@ -17,6 +17,8 @@
 		B51B95B522B9C8AF007BB439 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51B95B422B9C8AF007BB439 /* MovieDetails.swift */; };
 		B58E23D222C0297300E0338E /* SelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D122C0297300E0338E /* SelectionDataSource.swift */; };
 		B58E23D422C0436300E0338E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D322C0436300E0338E /* Extensions.swift */; };
+		B58E23D722C07D9100E0338E /* MovieProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D622C07D9100E0338E /* MovieProfileVC.swift */; };
+		B58E23D922C1BEF900E0338E /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D822C1BEF900E0338E /* StandardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B51B95B422B9C8AF007BB439 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		B58E23D122C0297300E0338E /* SelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDataSource.swift; sourceTree = "<group>"; };
 		B58E23D322C0436300E0338E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B58E23D622C07D9100E0338E /* MovieProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProfileVC.swift; sourceTree = "<group>"; };
+		B58E23D822C1BEF900E0338E /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +70,14 @@
 			children = (
 				B51B959D22B9AC3C007BB439 /* AppDelegate.swift */,
 				B51B959F22B9AC3C007BB439 /* CategoryVC.swift */,
+				B58E23D522C07CFE00E0338E /* MovieProfile */,
 				B51B95B122B9C792007BB439 /* Selection */,
 				B51B95A122B9AC3C007BB439 /* Main.storyboard */,
 				B51B95A422B9AC3D007BB439 /* Assets.xcassets */,
 				B51B95A622B9AC3D007BB439 /* LaunchScreen.storyboard */,
 				B51B95A922B9AC3D007BB439 /* Info.plist */,
 				B58E23D322C0436300E0338E /* Extensions.swift */,
+				B58E23D822C1BEF900E0338E /* StandardButton.swift */,
 			);
 			path = "Popcorn Filter";
 			sourceTree = "<group>";
@@ -85,6 +91,14 @@
 				B58E23D122C0297300E0338E /* SelectionDataSource.swift */,
 			);
 			path = Selection;
+			sourceTree = "<group>";
+		};
+		B58E23D522C07CFE00E0338E /* MovieProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B58E23D622C07D9100E0338E /* MovieProfileVC.swift */,
+			);
+			path = MovieProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51B95B322B9C858007BB439 /* SelectionCell.swift in Sources */,
+				B58E23D722C07D9100E0338E /* MovieProfileVC.swift in Sources */,
+				B58E23D922C1BEF900E0338E /* StandardButton.swift in Sources */,
 				B58E23D222C0297300E0338E /* SelectionDataSource.swift in Sources */,
 				B51B95A022B9AC3C007BB439 /* CategoryVC.swift in Sources */,
 				B51B95B022B9C6CB007BB439 /* SelectionVC.swift in Sources */,
