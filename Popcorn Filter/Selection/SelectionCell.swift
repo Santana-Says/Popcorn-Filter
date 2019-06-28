@@ -17,6 +17,7 @@ class SelectionCell: UICollectionViewCell {
 	//MARK: - IBOutlets
 	
 	@IBOutlet weak var movieImg: UIImageView!
+	@IBOutlet weak var scoreLbl: UILabel!
 	
 	//MARK: - Properties
 	
@@ -35,6 +36,11 @@ class SelectionCell: UICollectionViewCell {
 	func config(data: MovieDetails) {
 		details = data
 		setImg(from: data.images?.poster)
+		if let percentage = data.rating?.percentage, let votes = data.rating?.votes {
+			scoreLbl.text = "\(percentage)% (\(votes))"
+		} else {
+			scoreLbl.text = "No votes"
+		}
 	}
 	
 	private func setImg(from urlString: String?) {

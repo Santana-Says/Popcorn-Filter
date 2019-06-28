@@ -54,10 +54,14 @@ class MovieProfileVC: UIViewController {
 	private func setDuration() -> String {
 		guard let runtime = mediaDetails?.runtime, let totalMinutes = Double(runtime) else { return ""}
 		let perHour = 60.0
-		let duration = String(totalMinutes / perHour)
-		let durationComponents = duration.components(separatedBy: ".")
-		let hours = durationComponents[0]
-		let minutes = durationComponents[1]
+//		let duration = String(format: "%.2f", totalMinutes / perHour)
+//		let durationComponents = duration.components(separatedBy: ".")
+//		let hours = durationComponents[0]
+//		let minutes = durationComponents[1]
+		
+		let length = totalMinutes / perHour
+		let hours = Int(length)
+		let minutes = Int((length - Double(hours)) * perHour)
 		
 		return "\(hours)h \(minutes)min"
 	}
@@ -76,7 +80,8 @@ class MovieProfileVC: UIViewController {
 		ratingLbl.text = mediaDetails?.certification
 		durationLbl.text = setDuration()
 		if let genres = mediaDetails?.genres {
-			genresLbl.text = genres.joined(separator: ", ")
+			let orderedGenres = genres.map{$0.capitalized}.sorted()
+			genresLbl.text = orderedGenres.joined(separator: ", ")
 		}
 		synopsisLbl.text = mediaDetails?.synopsis
 	}

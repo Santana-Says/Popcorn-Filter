@@ -35,6 +35,10 @@ class SelectionDataSource: NSObject {
 		components.scheme = "https"
 		components.host = "tv-v2.api-fetch.website"
 		components.path = "/\(category.rawValue)/1"
+		components.queryItems = [
+			URLQueryItem(name: "sort", value: "trending"),
+			URLQueryItem(name: "order", value: "-1")
+		]
 		
 		return components.url
 	}
@@ -47,6 +51,9 @@ class SelectionDataSource: NSObject {
 			if let data = data {
 				do {
 					self.movieData = try JSONDecoder().decode([MovieDetails].self, from: data)
+					self.movieData.sort(by: { (m1, m2) -> Bool in
+						return m1.rating?.percentage ?? 0 > m2.rating?.percentage ?? 0
+					})
 					print("Decoded")
 					DispatchQueue.main.async {
 						self.collectionView?.reloadData()

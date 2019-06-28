@@ -18,6 +18,7 @@ class SelectionVC: UIViewController {
 	//MARK: - IBOutlets
 	
 	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var screenLbl: UILabel!
 	
 	var category: Category?
 	private lazy var selectionDataSource: SelectionDataSource = {
