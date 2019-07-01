@@ -37,10 +37,11 @@ class SelectionVC: UIViewController {
 		
 		collectionView.delegate = selectionDataSource
 		collectionView.dataSource = selectionDataSource
+		
+		selectionDataSource.retreiveData()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		selectionDataSource.retreiveData()
 	}
 	
 	//MARK: - IBActions

@@ -16,6 +16,7 @@ class SelectionDataSource: NSObject {
 	//MARK: - Properties
 	
 	private var collectionView: UICollectionView?
+	private var dataPage = 1
 	private var movieData = [MovieDetails]()
 	private var category: Category
 	weak var cellDelegate: SelectionCellDelegate?
@@ -34,27 +35,41 @@ class SelectionDataSource: NSObject {
 		var components = URLComponents()
 		components.scheme = "https"
 		components.host = "tv-v2.api-fetch.website"
-		components.path = "/\(category.rawValue)/1"
+		components.path = "/\(category.rawValue)/\(dataPage)"
 		components.queryItems = [
-			URLQueryItem(name: "sort", value: "trending"),
-			URLQueryItem(name: "order", value: "-1")
+			URLQueryItem(name: "sort", value: "year")
 		]
 		
 		return components.url
 	}
 	
+	private func removeDuplicates(content: [MovieDetails]) -> [MovieDetails] {
+		var movies = [MovieDetails]()
+		for movie in content {
+			if !self.movieData.contains(where: {$0.title == movie.title}) {
+				movies.append(movie)
+			}
+		}
+		return movies
+	}
+	
 	func retreiveData() {
 		guard let url = buildURL() else { return }
 		
+		print(url.absoluteString)
 		URLSession.shared.dataTask(with: url) { (data, response, error) in
-			print("Grabbing data")
 			if let data = data {
 				do {
-					self.movieData = try JSONDecoder().decode([MovieDetails].self, from: data)
-					self.movieData.sort(by: { (m1, m2) -> Bool in
-						return m1.rating?.percentage ?? 0 > m2.rating?.percentage ?? 0
+					var rawMovieData = try JSONDecoder().decode([MovieDetails].self, from: data)
+					print("Movie count: \(self.movieData.count)")
+					rawMovieData = rawMovieData.filter({ (movie) -> Bool in
+						guard let percentage = movie.rating?.percentage else {return false}
+						return percentage >= 75
 					})
-					print("Decoded")
+					
+					let newMovies = self.removeDuplicates(content: rawMovieData)
+					self.movieData.append(contentsOf: newMovies)
+					print("Movie count: \(self.movieData.count)")
 					DispatchQueue.main.async {
 						self.collectionView?.reloadData()
 					}
@@ -63,6 +78,10 @@ class SelectionDataSource: NSObject {
 				}
 			}
 		}.resume()
+		
+		movieData.sort(by: { (m1, m2) -> Bool in
+			return m1.rating?.percentage ?? 0 > m2.rating?.percentage ?? 0
+		})
 	}
 
 }
@@ -94,5 +113,12 @@ extension SelectionDataSource: UICollectionViewDataSource,  UICollectionViewDele
 		let cellWidth = (collectionView.bounds.width - sumOfSpaces) / cellsPerRow
 		
 		return CGSize(width: cellWidth, height: cellWidth * 1.3)
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		if indexPath.row == (movieData.count - 1) {
+			dataPage += 1
+			retreiveData()
+		}
 	}
 }
