@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieDetails: Codable {
+struct MovieDetails: Codable, Hashable {
 	var title:				String?
 	var year:				String?
 	var synopsis:			String?
@@ -32,13 +32,13 @@ struct MovieDetails: Codable {
 	
 }
 
-struct MovieImages: Codable {
+struct MovieImages: Codable, Hashable {
 	var poster:	String?
 	var fanart: String?
 	var banner:	String?
 }
 
-struct MovieReview: Codable {
+struct MovieReview: Codable, Hashable {
 	var percentage:	Int?
 	var votes:		Int?
 }

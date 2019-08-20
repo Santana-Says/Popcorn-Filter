@@ -19,6 +19,7 @@
 		B58E23D422C0436300E0338E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D322C0436300E0338E /* Extensions.swift */; };
 		B58E23D722C07D9100E0338E /* MovieProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D622C07D9100E0338E /* MovieProfileVC.swift */; };
 		B58E23D922C1BEF900E0338E /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E23D822C1BEF900E0338E /* StandardButton.swift */; };
+		B5F5C41E230B60240052DF80 /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5C41D230B60240052DF80 /* SelectionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B58E23D322C0436300E0338E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B58E23D622C07D9100E0338E /* MovieProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProfileVC.swift; sourceTree = "<group>"; };
 		B58E23D822C1BEF900E0338E /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
+		B5F5C41D230B60240052DF80 /* SelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				B51B95B222B9C858007BB439 /* SelectionCell.swift */,
 				B51B95B422B9C8AF007BB439 /* MovieDetails.swift */,
 				B58E23D122C0297300E0338E /* SelectionDataSource.swift */,
+				B5F5C41D230B60240052DF80 /* SelectionController.swift */,
 			);
 			path = Selection;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				B51B95B322B9C858007BB439 /* SelectionCell.swift in Sources */,
 				B58E23D722C07D9100E0338E /* MovieProfileVC.swift in Sources */,
+				B5F5C41E230B60240052DF80 /* SelectionController.swift in Sources */,
 				B58E23D922C1BEF900E0338E /* StandardButton.swift in Sources */,
 				B58E23D222C0297300E0338E /* SelectionDataSource.swift in Sources */,
 				B51B95A022B9AC3C007BB439 /* CategoryVC.swift in Sources */,
